@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About — Lipstix Directory</title>
+<meta name="description" content="About Lipstix Directory — an editorial guide to the best gentlemen's clubs and booked entertainment in Toronto and the NYC/Long Island corridor.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:ital,wght@0,400;0,500;0,600;1,600;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+  :root{
+    --ink:#0a0a0b;
+    --panel:#141416;
+    --panel-2:#1b1b1e;
+    --paper:#f4f2ee;
+    --pink:#ff1fb8;
+    --pink-dim:#b3007e;
+    --white:#f2f0ec;
+    --grey:#8d8b90;
+    --line: rgba(255,31,184,.35);
+  }
+
+  *{box-sizing:border-box;}
+
+  body{
+    background:var(--ink);
+    color:var(--white);
+    font-family:'Inter', sans-serif;
+    font-weight:400;
+    overflow-x:hidden;
+  }
+
+  h1,h2,h3,h4, .display{
+    font-family:'Bebas Neue', sans-serif;
+    letter-spacing:.02em;
+    line-height:.95;
+    margin:0;
+  }
+
+  .accent{
+    font-family:'Oswald', sans-serif;
+    font-style:italic;
+    font-weight:700;
+    color:var(--pink);
+  }
+
+  .eyebrow{
+    font-family:'Oswald', sans-serif;
+    font-weight:500;
+    letter-spacing:.35em;
+    font-size:.72rem;
+    color:var(--grey);
+    text-transform:uppercase;
+  }
+
+  a{ text-decoration:none; }
+
+  /* ---------- NAV ---------- */
+  .navwrap{
+    position:sticky; top:0; z-index:40;
+    background:rgba(10,10,11,.88);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(255,255,255,.08);
+  }
+  .navwrap .navbar-brand{
+    font-family:'Bebas Neue', sans-serif;
+    font-size:1.6rem;
+    color:var(--white);
+    letter-spacing:.04em;
+  }
+  .navwrap .navbar-brand span{ color:var(--pink); }
+  .navwrap .nav-link{
+    font-family:'Oswald', sans-serif;
+    font-size:.82rem;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--grey) !important;
+    padding:.4rem 1rem !important;
+  }
+  .navwrap .nav-link.active, .navwrap .nav-link:hover{ color:var(--white) !important; }
+  .btn-pink{
+    border:1px solid var(--pink);
+    color:var(--white);
+    font-family:'Oswald', sans-serif;
+    letter-spacing:.1em;
+    font-size:.78rem;
+    text-transform:uppercase;
+    padding:.5rem 1.2rem;
+    transition:.25s;
+    display:inline-block;
+  }
+  .btn-pink:hover{ background:var(--pink); color:#0a0a0b; }
+
+  /* ---------- PAGE BANNER ---------- */
+  .banner{
+    background:#000;
+    padding:6rem 0 4rem;
+    border-bottom:1px solid rgba(255,255,255,.07);
+  }
+  .banner h1{
+    font-size:clamp(3rem,7vw,5.2rem);
+    color:var(--white);
+  }
+  .banner h1 span{ color:var(--pink); }
+  .banner p{
+    color:var(--grey);
+    max-width:56ch;
+    margin-top:1.2rem;
+    font-size:1.02rem;
+    line-height:1.65;
+  }
+
+  section{ padding:4.5rem 0; }
+  section.tight{ padding-top:0; }
+  .rule-top{ border-top:1px solid rgba(255,255,255,.07); }
+
+  h2.section-h{
+    font-size:clamp(2rem,4vw,2.7rem);
+    color:var(--white);
+    margin-bottom:1.2rem;
+  }
+  h2.section-h span{ color:var(--pink); }
+
+  .lede{
+    color:#c7c5c9;
+    font-size:1.05rem;
+    line-height:1.75;
+    max-width:70ch;
+  }
+
+  .value-card{
+    background:var(--panel);
+    border:1px solid rgba(255,255,255,.08);
+    padding:2rem;
+    height:100%;
+  }
+  .value-card .num{
+    font-family:'Bebas Neue', sans-serif;
+    color:var(--pink);
+    font-size:1rem;
+    letter-spacing:.2em;
+  }
+  .value-card h3{
+    font-size:1.6rem;
+    color:var(--white);
+    margin-top:.4rem;
+  }
+  .value-card p{
+    color:#c7c5c9;
+    font-size:.94rem;
+    line-height:1.6;
+    margin-top:.8rem;
+  }
+
+  .cta-strip{
+    background:linear-gradient(135deg,#171016,#0a0a0b);
+    border:1px solid var(--pink-dim);
+    padding:3rem;
+    text-align:center;
+  }
+  .cta-strip h2{
+    font-size:clamp(1.8rem,4vw,2.6rem);
+    color:var(--white);
+  }
+  .cta-strip p{
+    color:var(--grey);
+    margin-top:.6rem;
+  }
+
+  footer{
+    border-top:1px solid rgba(255,255,255,.08);
+    padding:3.5rem 0 2.5rem;
+    color:var(--grey);
+    font-size:.85rem;
+  }
+  footer .fmark{
+    font-family:'Bebas Neue', sans-serif;
+    font-size:1.4rem;
+    color:var(--white);
+  }
+  footer a{ color:var(--grey); }
+  footer a:hover{ color:var(--pink); }
+  .disclaimer{
+    font-size:.78rem;
+    color:#666;
+    max-width:80ch;
+    line-height:1.6;
+    margin-top:1.5rem;
+    padding-top:1.5rem;
+    border-top:1px solid rgba(255,255,255,.06);
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<div class="navwrap">
+  <nav class="navbar navbar-expand-md">
+    <div class="container-fluid px-4 py-3">
+      <a class="navbar-brand" href="index.html">LIPSTIX <span>DIRECTORY</span></a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#nav1">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="nav1">
+        <ul class="navbar-nav align-items-md-center gap-md-2">
+          <li class="nav-item"><a class="nav-link" href="index.html#toronto">Toronto</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#nyli">NYC &amp; Long Island</a></li>
+          <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item mt-2 mt-md-0"><a class="btn-pink" href="contact.html">Book a Table</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+
+<!-- BANNER -->
+<div class="banner">
+  <div class="container">
+    <div class="eyebrow mb-2">About the Directory</div>
+    <h1>WHO WE ARE<span>.</span></h1>
+    <p>Lipstix Directory is an editorial guide to the gentlemen's clubs, VIP rooms, and booked entertainers worth your night — built and maintained by the team behind Lipstix Gentlemen's Club.</p>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- STORY -->
+  <section>
+    <div class="row g-5">
+      <div class="col-lg-6">
+        <h2 class="section-h">OUR <span>STORY</span></h2>
+        <p class="lede">Lipstix Gentlemen's Club has run Long Island's premier VIP room since 2021. Over the years, customers kept asking the same question after a great night: "where else is worth going?" This directory is our answer — a running, honest list of the rooms and entertainers we'd actually recommend, in our own city and beyond it.</p>
+      </div>
+      <div class="col-lg-6">
+        <h2 class="section-h">HOW WE <span>PICK</span></h2>
+        <p class="lede">Every listing is chosen the same way we'd want to be judged: reputation, consistency, and whether the experience matches the reputation. We list clubs and entertainers we'd send a friend to. Paid or affiliate placements, where they exist, are always marked clearly on the listing.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  <section class="rule-top">
+    <h2 class="section-h">WHAT WE <span>STAND FOR</span></h2>
+    <div class="row g-4 mt-1">
+      <div class="col-md-4">
+        <div class="value-card">
+          <div class="num">01</div>
+          <h3>Honest Listings</h3>
+          <p>No pay-to-play rankings. A club or entertainer earns a spot on the list because the experience holds up, not because they bought an ad.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="value-card">
+          <div class="num">02</div>
+          <h3>Respect, Both Ways</h3>
+          <p>We expect every listed venue to treat performers and guests with respect — and we expect the same from anyone using this directory to plan a night out.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="value-card">
+          <div class="num">03</div>
+          <h3>Kept Current</h3>
+          <p>Clubs close, hours change, and lineups move. We review listings on a rolling basis and pull anything that no longer meets the bar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="rule-top">
+    <div class="cta-strip">
+      <h2>Own a club or book entertainers?</h2>
+      <p>If you think your venue belongs on this list, we'd like to hear from you.</p>
+      <a href="contact.html" class="btn-pink mt-3">Get in Touch</a>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="fmark">LIPSTIX <span class="accent" style="font-size:1rem;">Directory</span></div>
+        <p class="mt-2 mb-0">3 Saxwood St, Deer Park, NY 11729</p>
+      </div>
+      <div class="col-md-6 text-md-end mt-3 mt-md-0">
+        <a href="index.html#toronto" class="me-3">Toronto</a>
+        <a href="index.html#nyli" class="me-3">NYC &amp; Long Island</a>
+        <a href="about.html" class="me-3">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="disclaimer">
+      Lipstix Directory is an independent guide published by Lipstix Gentlemen's Club. Listings for venues and entertainers other than Lipstix are provided for informational purposes and are not affiliated with or endorsed by Lipstix unless stated. Must be 18+ (21+ where required) and comply with local venue policy. Always confirm hours, cover, and booking terms directly with the listed venue or entertainer before visiting.
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

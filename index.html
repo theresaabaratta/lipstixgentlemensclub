@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lipstix Directory — Toronto &amp; Long Island's Finest Gentlemen's Clubs</title>
+<meta name="description" content="Lipstix Gentlemen's Club presents the directory: the best strip clubs and entertainment booking in Toronto, Long Island, and NYC.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:ital,wght@0,400;0,500;0,600;1,600;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+  :root{
+    --ink:#0a0a0b;
+    --panel:#141416;
+    --panel-2:#1b1b1e;
+    --paper:#f4f2ee;
+    --pink:#ff1fb8;
+    --pink-dim:#b3007e;
+    --white:#f2f0ec;
+    --grey:#8d8b90;
+    --line: rgba(255,31,184,.35);
+  }
+
+  *{box-sizing:border-box;}
+
+  body{
+    background:var(--ink);
+    color:var(--white);
+    font-family:'Inter', sans-serif;
+    font-weight:400;
+    overflow-x:hidden;
+  }
+
+  h1,h2,h3,h4, .display{
+    font-family:'Bebas Neue', sans-serif;
+    letter-spacing:.02em;
+    line-height:.95;
+    margin:0;
+  }
+
+  .accent{
+    font-family:'Oswald', sans-serif;
+    font-style:italic;
+    font-weight:700;
+    color:var(--pink);
+  }
+
+  .eyebrow{
+    font-family:'Oswald', sans-serif;
+    font-weight:500;
+    letter-spacing:.35em;
+    font-size:.72rem;
+    color:var(--grey);
+    text-transform:uppercase;
+  }
+
+  a{ text-decoration:none; }
+
+  /* ---------- NAV ---------- */
+  .navwrap{
+    position:sticky; top:0; z-index:40;
+    background:rgba(10,10,11,.88);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(255,255,255,.08);
+  }
+  .navwrap .navbar-brand{
+    font-family:'Bebas Neue', sans-serif;
+    font-size:1.6rem;
+    color:var(--white);
+    letter-spacing:.04em;
+  }
+  .navwrap .navbar-brand span{ color:var(--pink); }
+  .navwrap .nav-link{
+    font-family:'Oswald', sans-serif;
+    font-size:.82rem;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--grey) !important;
+    padding:.4rem 1rem !important;
+  }
+  .navwrap .nav-link:hover{ color:var(--white) !important; }
+  .btn-pink{
+    border:1px solid var(--pink);
+    color:var(--white);
+    font-family:'Oswald', sans-serif;
+    letter-spacing:.1em;
+    font-size:.78rem;
+    text-transform:uppercase;
+    padding:.5rem 1.2rem;
+    transition:.25s;
+  }
+  .btn-pink:hover{ background:var(--pink); color:#0a0a0b; }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    min-height:88vh;
+    display:flex;
+  }
+  .hero-left{
+    background:var(--paper);
+    color:#141416;
+    flex:0 0 42%;
+    padding:3rem 3.5rem;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+  }
+  .hero-left .est{
+    font-family:'Oswald', sans-serif;
+    letter-spacing:.4em;
+    font-size:.7rem;
+    color:var(--pink-dim);
+  }
+  .hero-right{
+    background:#000;
+    flex:1;
+    padding:4rem 4rem;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    position:relative;
+    border-left:1px solid rgba(255,255,255,.06);
+  }
+  .hero-right .display{
+    font-size:clamp(3rem, 7vw, 5.6rem);
+    color:var(--white);
+  }
+  .hero-right .display em{
+    display:block;
+    font-family:'Oswald', sans-serif;
+    font-style:italic;
+    font-weight:700;
+    color:var(--pink);
+    font-size:.62em;
+    letter-spacing:0;
+  }
+  .hero-sub{
+    max-width:34ch;
+    color:var(--grey);
+    font-size:1rem;
+    margin-top:1.4rem;
+    line-height:1.6;
+  }
+  .corner{
+    position:relative;
+  }
+  .corner::after{
+    content:"";
+    position:absolute;
+    right:-2rem; bottom:-2.4rem;
+    width:220px; height:130px;
+    border-right:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+
+  @media (max-width: 900px){
+    .hero{ flex-direction:column; min-height:auto;}
+    .hero-left{ flex:none; padding:2.2rem; }
+    .hero-right{ padding:2.6rem 2rem 3.5rem; border-left:none; }
+  }
+
+  /* ---------- CITY HEADERS ---------- */
+  .city-band{
+    padding:5rem 0 1rem;
+    border-top:1px solid rgba(255,255,255,.07);
+  }
+  .city-band .eyebrow{ margin-bottom:.4rem; }
+  .city-band h2{
+    font-size:clamp(2.6rem,6vw,4.2rem);
+    color:var(--white);
+  }
+  .city-band h2 span{ color:var(--pink); }
+  .city-note{
+    color:var(--grey);
+    max-width:62ch;
+    margin-top:1rem;
+    font-size:.98rem;
+    line-height:1.65;
+  }
+
+  /* ---------- LISTING CARD ---------- */
+  .listing{
+    background:var(--panel);
+    border:1px solid rgba(255,255,255,.08);
+    padding:2rem;
+    height:100%;
+    position:relative;
+    transition:border-color .2s;
+  }
+  .listing:hover{ border-color:var(--line); }
+  .listing .rank{
+    font-family:'Bebas Neue', sans-serif;
+    font-size:.9rem;
+    color:var(--pink);
+    letter-spacing:.2em;
+  }
+  .listing h3{
+    font-size:1.9rem;
+    color:var(--white);
+    margin-top:.3rem;
+  }
+  .listing .loc{
+    font-family:'Oswald', sans-serif;
+    font-size:.76rem;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--grey);
+    margin-top:.3rem;
+  }
+  .listing p{
+    color:#c7c5c9;
+    font-size:.94rem;
+    line-height:1.6;
+    margin-top:1rem;
+  }
+  .tag{
+    display:inline-block;
+    font-family:'Oswald', sans-serif;
+    font-size:.68rem;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--pink);
+    border:1px solid var(--pink-dim);
+    padding:.25rem .6rem;
+    margin-top:1.1rem;
+  }
+
+  /* Flagship (Lipstix own listing) */
+  .flagship{
+    background:#000;
+    border:1px solid var(--pink);
+    padding:2.6rem;
+  }
+  .flagship .eyebrow{ color:var(--pink); }
+  .flagship h3{
+    font-family:'Bebas Neue', sans-serif;
+    font-size:3rem;
+    color:var(--white);
+  }
+
+  /* Entertainer feature (hardbodydancer.com) */
+  .entertainer-feature{
+    background:linear-gradient(135deg,#171016,#0a0a0b);
+    border:1px solid var(--pink-dim);
+    padding:2.4rem;
+  }
+
+  section{ padding-bottom:2rem; }
+
+  footer{
+    border-top:1px solid rgba(255,255,255,.08);
+    padding:3.5rem 0 2.5rem;
+    color:var(--grey);
+    font-size:.85rem;
+  }
+  footer .fmark{
+    font-family:'Bebas Neue', sans-serif;
+    font-size:1.4rem;
+    color:var(--white);
+  }
+  footer a{ color:var(--grey); }
+  footer a:hover{ color:var(--pink); }
+  .disclaimer{
+    font-size:.78rem;
+    color:#666;
+    max-width:80ch;
+    line-height:1.6;
+    margin-top:1.5rem;
+    padding-top:1.5rem;
+    border-top:1px solid rgba(255,255,255,.06);
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<div class="navwrap">
+  <nav class="navbar navbar-expand-md">
+    <div class="container-fluid px-4 py-3">
+      <a class="navbar-brand" href="#top">LIPSTIX <span>DIRECTORY</span></a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#nav1">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="nav1">
+        <ul class="navbar-nav align-items-md-center gap-md-2">
+          <li class="nav-item"><a class="nav-link" href="#toronto">Toronto</a></li>
+          <li class="nav-item"><a class="nav-link" href="#nyli">NYC &amp; Long Island</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item mt-2 mt-md-0"><a class="btn-pink" href="#nyli">Book a Table</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+
+<!-- HERO -->
+<div id="top" class="hero">
+  <div class="hero-left">
+    <div class="est">EST. &nbsp;|&nbsp; 2021</div>
+  </div>
+  <div class="hero-right corner">
+    <div class="eyebrow">The Directory</div>
+    <h1 class="display">TWO CITIES.<em>One standard.</em></h1>
+    <p class="hero-sub">Curated by Lipstix Gentlemen's Club — the venues, VIP rooms, and booked entertainers worth your night, across Toronto and the Long Island / NYC corridor.</p>
+    <div class="d-flex gap-3 mt-4 flex-wrap">
+      <a href="#toronto" class="btn-pink">Toronto Listings</a>
+      <a href="#nyli" class="btn-pink">NYC &amp; Long Island</a>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- TORONTO -->
+  <section id="toronto" class="city-band">
+    <div class="eyebrow">Canada — Ontario</div>
+    <h2>TORONTO<span>.</span></h2>
+    <p class="city-note">Toronto's licensing rules have kept the scene small and old-school — most of what's left dates back to Yonge Street's showbar era. Here's what's still worth the cover charge, plus the city's go-to name for booking private entertainers.</p>
+
+    <div class="row g-4 mt-2">
+      <div class="col-md-4">
+        <div class="listing">
+          <div class="rank">NO. 01</div>
+          <h3>The Brass Rail</h3>
+          <div class="loc">Yonge Street, Toronto</div>
+          <p>A Yonge Street fixture since before the pole was standard equipment. Walking distance from U of T and Rosedale, it's the club that regulars bring out-of-towners to see first.</p>
+          <span class="tag">Landmark</span>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="listing">
+          <div class="rank">NO. 02</div>
+          <h3>Zanzibar Tavern</h3>
+          <div class="loc">Yonge Street, Toronto</div>
+          <p>One of the city's oldest running nightclubs — a former showbar stage turned all-night strip club, and still one of the busiest rooms on the strip.</p>
+          <span class="tag">Est. 1960s</span>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="listing">
+          <div class="rank">NO. 03</div>
+          <h3>House of Lancaster</h3>
+          <div class="loc">Toronto, ON</div>
+          <p>Running continuously since 1983, House of Lancaster keeps a lower profile than its Yonge Street neighbors but holds a loyal, regular crowd.</p>
+          <span class="tag">Since 1983</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-12">
+        <div class="entertainer-feature">
+          <div class="row align-items-center g-4">
+            <div class="col-lg-8">
+              <div class="eyebrow" style="color:var(--pink);">Featured Entertainer Booking</div>
+              <h3 style="font-family:'Bebas Neue',sans-serif; font-size:2.4rem; color:var(--white); margin-top:.3rem;">Hardbody Dancer <span class="accent">— Toronto</span></h3>
+              <p style="color:#c7c5c9; margin-top:.8rem; max-width:60ch; line-height:1.65;">Looking for private, bookable entertainment rather than a club floor? <strong style="color:var(--white);">hardbodydancer.com</strong> is our pick for Toronto-based exotic entertainers — bachelorette parties, birthdays, and private events booked directly, dancer-to-client.</p>
+            </div>
+            <div class="col-lg-4 text-lg-end">
+              <a href="https://hardbodydancer.com" target="_blank" rel="noopener" class="btn-pink">Visit hardbodydancer.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NYC & LONG ISLAND -->
+  <section id="nyli" class="city-band">
+    <div class="eyebrow">USA — New York</div>
+    <h2>NYC <span>&amp;</span> LONG ISLAND</h2>
+    <p class="city-note">From Suffolk County's VIP suites to the club that made it into a Jennifer Lopez movie — this is the corridor's short list.</p>
+
+    <div class="row g-4 mt-2">
+      <div class="col-lg-7">
+        <div class="flagship h-100">
+          <div class="eyebrow">Our Flagship</div>
+          <h3>Lipstix Gentlemen's Club</h3>
+          <div class="loc" style="margin-top:.2rem;">3 Saxwood St, Deer Park, NY 11729</div>
+          <p style="color:#c7c5c9; margin-top:1rem; line-height:1.65;">Long Island's premier gentlemen's club. Upscale VIP suites, bottle service, and a lineup built around the hottest entertainment on the island. Happy hour daily.</p>
+          <div class="d-flex gap-3 mt-4">
+            <a href="#" class="btn-pink">Book a Table</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-5">
+        <div class="listing h-100">
+          <div class="rank">FEATURED</div>
+          <h3>Show Palace</h3>
+          <div class="loc">42-50 21st St, Long Island City, NY 11101</div>
+          <p>The club from <em>Hustlers</em> — chandeliers, brass rails, and a main stage with poles that reach the ceiling. A looser, less buttoned-up alternative to Manhattan's clubs, a short ride from the island.</p>
+          <span class="tag">As Seen in Film</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="city-band">
+    <div class="eyebrow">About This Directory</div>
+    <h2 style="font-size:clamp(2rem,4vw,2.8rem);">WHY WE BUILT <span>THIS</span></h2>
+    <p class="city-note">Lipstix Gentlemen's Club has spent years building the VIP experience on Long Island. This directory is our list of the rooms and entertainers — in Toronto and across the NYC/Long Island corridor — that meet the same bar we hold ourselves to. Listings are editorial picks, not paid placements unless marked.</p>
+  </section>
+
+</div>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="fmark">LIPSTIX <span class="accent" style="font-size:1rem;">Directory</span></div>
+        <p class="mt-2 mb-0">3 Saxwood St, Deer Park, NY 11729</p>
+      </div>
+      <div class="col-md-6 text-md-end mt-3 mt-md-0">
+        <a href="#toronto" class="me-3">Toronto</a>
+        <a href="#nyli" class="me-3">NYC &amp; Long Island</a>
+        <a href="#about">About</a>
+      </div>
+    </div>
+    <div class="disclaimer">
+      Lipstix Directory is an independent guide published by Lipstix Gentlemen's Club. Listings for venues and entertainers other than Lipstix are provided for informational purposes and are not affiliated with or endorsed by Lipstix unless stated. Must be 18+ (21+ where required) and comply with local venue policy. Always confirm hours, cover, and booking terms directly with the listed venue or entertainer before visiting.
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
